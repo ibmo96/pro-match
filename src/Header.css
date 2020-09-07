@@ -1,0 +1,17 @@
+.header {
+    display: flex; 
+    justify-content: space-between; /* All the children in this div, put space between them */
+    align-items: center; /* align items on the horizontal axis */
+    border-bottom: 1px solid skyblue;
+}
+
+.header__logo{
+    height:50px;
+    width:200px;
+    object-fit: contain;
+    border-radius: 90%;
+}
+
+.header__icon{
+    padding:20px; /* space from the sides */
+}

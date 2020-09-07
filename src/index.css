@@ -1,3 +1,10 @@
+/*
+Apply this global rule using the * tag to override the browser invisible margins at the top 
+*/
+* {
+  margin: 0; 
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

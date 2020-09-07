@@ -1,5 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Dependcies
+For this project the following dependencies were used: 
+
+## Icons/butons
+Material UI 
+
+## Page navigation 
+React Router 
+
 ## Available Scripts
 
 In the project directory, you can run:
