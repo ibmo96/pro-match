@@ -6,6 +6,10 @@
 
 - bio is reserved for skills and goals 
 
+
+- Show github descriptions: 
+	https://github.com/jawj/github-widget
+
 -----------------------------------------------------------------------------
 1. copy this into bottom of <body> tag
 

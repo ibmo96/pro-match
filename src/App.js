@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./Header";
 import TinderCards from "./TinderCards";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './App.css';
 
 //install ES7 and Prettier from marketplace!!   
