@@ -1,8 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import TinderCard from "react-tinder-card";
 //import GithubWidget from "./github-widget/github-widget.min.js";
 import "./github-widget/github-widget.css";
 import "./TinderCards.css"; 
+import database from './firebase';
+//  import storage from './firebase'; 
+//import Firebase from "./firebaseupload";
 
 function TinderCards() {
     
@@ -12,16 +15,23 @@ function TinderCards() {
     script.src = "./github-widget/github-widget.min.js";
     document.head.appendChild(script); */
 
-    const [cards, setCards] = useState([
-        {
-            name: 'Ibra',
-            skills: require('./images/skills_img.png'),
-        },
-        {
-            name: 'Nick',
-            skills: require('./images/skills_img.png'),
-        },  
-    ]);
+    const [cards, setCards] = useState([]);
+    
+    //code that runs based on condition (reading form Firebase)
+
+    useEffect(()  => {
+
+        database
+        .collection("people")
+        .onSnapshot((snapshot) =>  //get me a snapshot of the firebase collection
+            setCards(snapshot.docs.map((doc) => doc.data()))            //doc.data is the fields from the collection. Anytime the database changes, take a snapshot of it and put it in the cards array
+        ); //pulls from Firebase people collection
+        //This will run ONCE when the TinderCards component loads 
+    }, []); 
+
+    
+    
+    
     
     //<div class="github-widget" data-user="some-github-username"></div>
     //const cards = [];

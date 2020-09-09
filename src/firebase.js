@@ -11,9 +11,10 @@ const firebaseConfig = {
     measurementId: "G-NN8Q3975P5"
   };
 
-
   const firebaseApp = firebase.initializeApp(firebaseConfig); 
-
   const database = firebaseApp.firestore(); //realtime database
 
-  export default database; 
+  //const storage = firebase.storage(); //stores the images 
+
+  export  default database; 
+  //export const storage = firebase.storage();
