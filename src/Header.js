@@ -19,7 +19,7 @@ function Header() {
             </IconButton>
             
             {/* <img src= 'images/promatch_logo.png' alt="logo"/> */}
-            <img className="header__logo" alt="logo" src={require('./images/promatch_logo.png')} />
+            <img className="header__logo" alt="logo" src={require('./images/gitr_png.png')} />
             
             <IconButton>
             <ForumIcon className="header__icon" fontSize="large"/>

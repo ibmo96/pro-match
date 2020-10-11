@@ -54,7 +54,7 @@ function TinderCards() {
 
     return (
         <div>
-            <h1>Hub cards</h1>
+            <h1>Happy hunting!</h1>
             <div className="tinderCards__cardContainer"></div>
             <div class="github-widget" data-user="ibmo96" ></div>
             {cards.map((card) => (
@@ -65,7 +65,7 @@ function TinderCards() {
                 >
                     <div 
                         style={{ backgroundImage: `url(${card.skills})` }}
-                        className="card"
+                        className="Tcard"
                     >
                         <h3>{card.name}</h3>
                     </div>

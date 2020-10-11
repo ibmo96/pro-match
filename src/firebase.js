@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "firebase";  
 
 const firebaseConfig = {
     apiKey: "AIzaSyCC0e2ZG3zeix-2UR5KOhHukfuZypA8X0k",
@@ -13,8 +13,11 @@ const firebaseConfig = {
 
   const firebaseApp = firebase.initializeApp(firebaseConfig); 
   const database = firebaseApp.firestore(); //realtime database
+  firebase.analytics(); 
 
   //const storage = firebase.storage(); //stores the images 
 
+
+  export const auth = firebaseApp.auth(); //authentication instance 
   export  default database; 
   //export const storage = firebase.storage();

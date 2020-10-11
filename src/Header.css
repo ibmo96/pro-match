@@ -3,6 +3,7 @@
     justify-content: space-between; /* All the children in this div, put space between them */
     align-items: center; /* align items on the horizontal axis */
     border-bottom: 1px solid skyblue;
+    background-color: aquamarine;
 }
 
 .header__logo{
