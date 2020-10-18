@@ -2,7 +2,7 @@ import { FormatListBulletedTwoTone } from '@material-ui/icons'
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap' 
 import { useAuth } from '../contexts/AuthContext'
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 
 
@@ -13,14 +13,14 @@ export default function Signup() {
     const { signup } = useAuth()
     const [error, setError] = useState('') //empty string, we dont have an error to begin with
     const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
 
     async function handleSubmit(e){ //has to be an asynchronous function in order to wait the signup function in the try/catch
         e.preventDefault()
 
         //password confirmation check
-        if (passwordRef.current.value !== 
-             passwordConfirmRef.current.value){
+        if (passwordRef.current.value !== passwordConfirmRef.current.value){
                return setError('Passwords do not match!')     
              }
 
@@ -28,6 +28,7 @@ export default function Signup() {
             setError('')
             setLoading(true)  //spreventing us from pressing the sign up button again when in a 'loading' state (must set the 'disabled' trait on the relevant button in the form to check the loading const)
             await signup(emailRef.current.value, passwordRef.current.value) 
+            history.push("/")
 
         } catch {
             setError('Failed to sign-up')
@@ -43,7 +44,7 @@ export default function Signup() {
                  <h2 className="text-center mb-4"> Sign Up </h2>
                  {error && <Alert variant="danger">{error}</Alert>}
                  <div className= "w-100 text-center mt-2">
-                    Already have an account? <Link to="/signup">Log In</Link>   
+                    Already have an account? <Link to="/login">Log In</Link>   
                 </div> 
                  <Form onSubmit={handleSubmit}>
                      <Form.Group id="email">

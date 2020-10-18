@@ -12,14 +12,14 @@ export default function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState()
     const [loading, setLoading] = useState(true) //firebase initially checks for user authentication, and thats wat we are 'loading' initially
 
-
+    //login to firebase auth
     function login(email, password){
-        auth.signInWithEmailAndPassword(email, password)
+        return auth.signInWithEmailAndPassword(email, password) //must return, because its a promise
     }
 
-
+    //signup to firebase auth
     function signup(email, password){
-        auth.createUserWithEmailAndPassword(email, password)
+        return auth.createUserWithEmailAndPassword(email, password)
     }
 
     useEffect(() => {
@@ -40,8 +40,9 @@ export default function AuthProvider({ children }) {
 
     const value = {
         currentUser, 
-        signup, 
-        login
+        login,
+        signup 
+        
     }
 
 

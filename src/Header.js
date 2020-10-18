@@ -10,23 +10,30 @@ import IconButton from '@material-ui/core/IconButton';
 
 //ES6: const Header = () => 
 
-function Header() {
+export function LoggedInHeader(){
     return (
-        //BEM naming convention
+
         <div className="header">
             <IconButton>
-            <PersonIcon className="header__icon" fontSize="large"/>
-            </IconButton>
-            
-            {/* <img src= 'images/promatch_logo.png' alt="logo"/> */}
+                <PersonIcon className="header__icon" fontSize="large"/>
+            </IconButton>     
             <img className="header__logo" alt="logo" src={require('./images/gitr_png.png')} />
-            
             <IconButton>
-            <ForumIcon className="header__icon" fontSize="large"/>
+                <ForumIcon className="header__icon" fontSize="large"/>
             </IconButton>
             
         </div>
     )
+
 }
 
-export default Header
+export function Header() {
+    return (
+        //BEM naming convention
+        <div className="header">
+            <img className="header__logo" alt="logo" src={require('./images/gitr_png.png')} />     
+        </div>
+    )
+}
+
+

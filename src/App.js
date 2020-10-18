@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from "./Header";
+import {Header} from "./Header";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 //import './App.css';
 import Signup from "./components/Signup"; 
@@ -13,7 +13,6 @@ import Login from "./components/Login"
 function App() {
   return (
       <div>
-      <Header />
       <Container
         className="d-flex align-items-center justify-content-center"
         style= {{ minHeight: "100vh" }}>
@@ -22,9 +21,16 @@ function App() {
             <Router>
               <AuthProvider>
                 <Switch>
-                  <Route exact path = "/" component={CardsView} />
-                  <Route path="/singup" component={Signup} />
-                  <Route path="/login" component={Login} />
+                  <Route exact path = "/" component={CardsView}>
+                    <Header profileButton="/profile" 
+                            chatButton = "/chat"/>
+                  </Route>
+                  <Route path="/signup" component={Signup}>
+                    <Header/>
+                  </Route>
+                  <Route path="/login" component={Login}>
+                    <Header/>
+                  </Route>
                 </Switch>
               </AuthProvider>
             </Router>

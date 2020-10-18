@@ -11,8 +11,11 @@
     width:200px;
     object-fit: contain;
     border-radius: 90%;
+    margin: 0 auto; 
 }
 
 .header__icon{
     padding:20px; /* space from the sides */
+    position: relative;
+    z-index: 100;
 }

@@ -7,7 +7,7 @@ import database from './firebase';
 //  import storage from './firebase'; 
 //import Firebase from "./firebaseupload";
 
-function TinderCards() {
+export default function TinderCards() {
     
     //importing github widget script
     /* const script = document.createElement("script");
@@ -56,7 +56,7 @@ function TinderCards() {
         <div>
             <h1>Happy hunting!</h1>
             <div className="tinderCards__cardContainer"></div>
-            <div class="github-widget" data-user="ibmo96" ></div>
+            {/* <div class="github-widget" data-user="ibmo96" ></div> */}
             {cards.map((card) => (
                 <TinderCard
                     className="swipe"
@@ -77,5 +77,3 @@ function TinderCards() {
     )
 }
 
-
-export default TinderCards
